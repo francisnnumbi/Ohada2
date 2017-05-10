@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+	android:background="#000000"
+	android:orientation="horizontal"
+	android:descendantFocusability="blocksDescendants"
+	android:layout_gravity="center_vertical"
+	android:paddingTop="5dp"
+	android:paddingBottom="5dp">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/exp_list_post_ref"
+		android:ems="2"
+		android:paddingLeft="5dp"
+		android:text="AX"
+		android:textColor="#FFFFFF"
+		android:gravity="center_vertical"
+		android:layout_gravity="center_vertical"
+		android:layout_alignParentLeft="true"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="70dp"
+		android:id="@+id/exp_list_post_designation"
+		android:text="well this is marvellous in the sens that goo is good"
+		android:paddingLeft="7dp"
+		android:layout_toRightOf="@+id/exp_list_post_ref"
+		android:layout_toLeftOf="@+id/exp_list_post_montant"
+		android:marqueeRepeatLimit="marquee_forever"
+		android:singleLine="true"
+		android:ellipsize="marquee"
+		android:textColor="#FFFFFF"
+		android:scrollHorizontally="true"
+		android:focusableInTouchMode="true"
+		android:gravity="left"
+		android:layout_gravity="left|center"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:layout_width="wrap_content"
+		android:id="@+id/exp_list_post_montant"
+		android:text="0.0"
+		android:gravity="right"
+		android:textColor="#FFFFFF"
+		android:layout_gravity="right|center_vertical"
+		android:paddingRight="10dp"
+		android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+

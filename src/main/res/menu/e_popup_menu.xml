@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/e_pop_new"
+		android:title="Nouveau"/>
+	<item
+		android:id="@+id/e_pop_edit"
+		android:title="Modifier..."/>
+	<item
+		android:id="@+id/e_pop_delete"
+		android:title="Effacer"/>
+</menu>

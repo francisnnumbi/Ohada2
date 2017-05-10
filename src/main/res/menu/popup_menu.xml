@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/pop_new"
+		android:title="Nouveau"/>
+	<item
+		android:id="@+id/pop_edit"
+		android:title="Modifier..."/>
+	<item
+		android:id="@+id/pop_delete"
+		android:title="Effacer"/>
+
+	<item android:title="Deplacer vers...">
+		<menu>
+			<item
+        android:id="@+id/pop_poste"
+        android:title="Poste">	
+				<menu>
+					<item
+						android:id="@+id/pop_poste_actif"
+						android:title="Actif"/>	
+					<item
+						android:id="@+id/pop_poste_passif"
+						android:title="Passif"/>	
+					<item
+						android:id="@+id/pop_poste_charge"
+						android:title="Charge"/>	
+					<item
+						android:id="@+id/pop_poste_produit"
+						android:title="Produit"/>	
+				</menu>
+			</item>
+		</menu>
+	</item>
+
+</menu>

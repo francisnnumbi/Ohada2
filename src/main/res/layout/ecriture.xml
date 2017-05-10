@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<ScrollView
+		android:layout_height="match_parent"
+		android:layout_width="match_parent">
+
+		<GridLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:padding="5dp"
+			android:columnCount="5">
+
+			<GridLayout
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:padding="5dp"
+				android:columnCount="5"
+				android:layout_column="0"
+				android:layout_row="0">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="id:"
+					android:layout_width="wrap_content"
+					android:layout_column="0"
+					android:layout_row="0"/>
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_id"
+					android:hint="1"
+					android:layout_column="1"
+					android:layout_row="0"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Date:"
+					android:layout_width="wrap_content"
+					android:layout_column="0"
+					android:layout_row="1"/>
+
+				<EditText
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:editable="false"
+					android:id="@+id/ecriture_date"
+					android:ems="10"
+					android:text="0"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Libellé:"
+					android:layout_width="wrap_content"
+					android:layout_column="0"
+					android:layout_row="2"/>
+
+				<EditText
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_libelle"
+					android:layout_column="1"
+					android:layout_row="2"
+					android:hint="Libellé"
+					android:layout_columnSpan="2"/>
+
+				<CheckBox
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_equilibre"
+					android:layout_column="2"
+					android:text="Équilibrée"
+					android:enabled="false"
+					android:layout_row="3"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Opération:"
+					android:layout_width="wrap_content"
+					android:layout_column="0"
+					android:layout_row="3"/>
+
+			</GridLayout>
+
+			<HorizontalScrollView
+				android:layout_column="0"
+				android:layout_row="1"
+				android:layout_height="wrap_content"
+				android:layout_width="match_parent">
+
+				<GridLayout
+					android:layout_height="match_parent"
+					android:layout_width="match_parent"
+					android:padding="5dp"
+					android:columnCount="5"
+					android:rowCount="2">
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="A/C id"
+						android:layout_width="wrap_content"
+						android:layout_column="0"
+						android:layout_row="0"
+						android:textColor="#0000FF"
+						android:gravity="center"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="A/C Designation"
+						android:layout_width="wrap_content"
+						android:layout_column="1"
+						android:layout_columnSpan="2"
+						android:layout_row="0"
+						android:ems="10"
+						android:textColor="#0000FF"
+						android:paddingLeft="10dp"
+						android:gravity="center"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="Montant"
+						android:textColor="#0000FF"
+						android:layout_width="wrap_content"
+						android:layout_column="3"
+						android:layout_row="0"
+						android:gravity="right"/>
+
+					<TextView
+						android:layout_height="wrap_content"
+						android:text="Dr/Cr"
+						android:layout_width="wrap_content"
+						android:layout_column="4"
+						android:layout_row="0"
+						android:ems="5"
+						android:textColor="#0000FF"
+						android:paddingLeft="10dp"
+						android:gravity="right"/>
+
+					<ListView
+						android:layout_height="200dp"
+						android:layout_width="match_parent"
+						android:layout_column="0"
+						android:layout_row="1"
+						android:layout_columnSpan="5"
+						android:id="@+id/ecriture_list"
+						android:minHeight="100dp"/>
+
+				</GridLayout>
+
+			</HorizontalScrollView>
+
+			<GridLayout
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:padding="5dp"
+				android:columnCount="3"
+				android:layout_column="0"
+				android:layout_row="2">
+
+				<Button
+					android:layout_height="wrap_content"
+					style="?android:attr/buttonStyleSmall"
+					android:text="Ajouter"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_add_btn"
+					android:layout_column="0"
+					android:layout_row="0"/>
+
+				<Button
+					android:layout_height="wrap_content"
+					style="?android:attr/buttonStyleSmall"
+					android:text="Verifier"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_verify_btn"
+					android:layout_column="1"
+					android:layout_row="0"/>
+
+				<Button
+					android:layout_height="wrap_content"
+					style="?android:attr/buttonStyleSmall"
+					android:text="Enregistrer"
+					android:layout_width="wrap_content"
+					android:id="@+id/ecriture_save_btn"
+					android:layout_column="2"
+					android:layout_row="0"/>
+
+			</GridLayout>
+
+		</GridLayout>
+
+	</ScrollView>
+
+</LinearLayout>
+

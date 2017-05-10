@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="JOURNALISATION"
+		android:id="@+id/ect_tv1"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_gravity="center|center_vertical|center_horizontal"
+		android:gravity="center|center_vertical|center_horizontal"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		style="?android:attr/buttonStyleSmall"
+		android:text="Ajouter Écriture"
+		android:layout_width="wrap_content"
+		android:id="@+id/ecriture_add_btn"/>
+
+	<GridLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:alignmentMode="alignBounds"
+		android:layout_gravity="fill|fill_horizontal"
+		android:columnCount="4"
+		android:rowCount="1"
+		android:padding="5dp">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_column="0"
+			android:layout_row="0"
+			android:gravity="left"
+			android:textColor="#0000FF"
+			android:text="ID"
+			android:ems="3"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_column="1"
+			android:layout_row="0"
+			android:gravity="center"
+			android:textColor="#0000FF"
+			android:layout_columnSpan="2"
+			android:text="DATE"
+			android:paddingLeft="10dp"
+			android:ems="6"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_column="3"
+			android:layout_row="0"
+			android:gravity="left"
+			android:textColor="#0000FF"
+			android:text="LIBELÉ"
+			android:paddingLeft="10dp"
+			android:ems="10"/>
+
+	</GridLayout>
+
+	<ListView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/ecrituretab_lv"/>
+
+</LinearLayout>
+

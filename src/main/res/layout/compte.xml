@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Réf.:"
+				android:layout_width="wrap_content"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_ref"
+				android:hint="(2 lettres) AX"/>
+
+		</LinearLayout>
+
+		<HorizontalScrollView
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent">
+
+			<GridLayout
+				android:layout_height="match_parent"
+				android:layout_width="match_parent"
+				android:padding="5dp">
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Classe id:"
+					android:layout_width="wrap_content"
+					android:layout_column="0"
+					android:layout_row="0"
+					android:gravity="center"
+					android:layout_gravity="center"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Compte id:"
+					android:layout_width="wrap_content"
+					android:layout_column="1"
+					android:layout_row="0"
+					android:gravity="center"
+					android:layout_gravity="center"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="S Cpt id:"
+					android:layout_width="wrap_content"
+					android:layout_column="2"
+					android:layout_row="0"
+					android:layout_gravity="center"/>
+
+				<TextView
+					android:layout_height="wrap_content"
+					android:text="Cpt Div. id:"
+					android:layout_width="wrap_content"
+					android:layout_column="3"
+					android:layout_row="0"
+					android:layout_gravity="center"/>
+
+				<Spinner
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/cpt_classe_id"
+					android:hint="1 - 9"
+					android:layout_column="0"
+					android:layout_row="1"/>
+
+				<Spinner
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/cpt_compt_id"
+					android:hint="1 - 9"/>
+
+				<Spinner
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/cpt_scompte_id"
+					android:hint="1 - 9"/>
+
+				<Spinner
+					android:layout_height="wrap_content"
+					android:ems="10"
+					android:layout_width="wrap_content"
+					android:id="@+id/cpt_div_id"
+					android:hint="1 - 9"/>
+
+			</GridLayout>
+
+		</HorizontalScrollView>
+
+		<GridLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:padding="5dp">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="S. Cpt Titre:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="0"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_titre"
+				android:hint="Sous Compte"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Cpt Div. Titre:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="1"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_div_titre"
+				android:hint="Compte Divisionnaire"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="ID:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="2"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:editable="false"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_id"
+				android:hint="auto-généré"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Intitulé:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="3"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:editable="false"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_intitule"
+				android:hint="auto-généré"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Solde Init.:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="4"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:text="0.0"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_solde_init"
+				android:hint="0.0"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Solde Fin.:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="5"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:editable="false"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_solde_fin"
+				android:hint="auto-généré"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Poste Réf.:"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="6"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:editable="false"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_poste_ref"
+				android:hint="(2 lettres) NF"/>
+
+		</GridLayout>
+
+		<ExpandableListView
+			android:id="@+id/cpt_exp_list"
+			android:layout_height="400dp"
+			android:layout_width="match_parent"
+			android:padding="5dp"
+			android:minHeight="400dp"/>
+
+		<GridLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:padding="5dp">
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="Quitter"
+				android:layout_width="wrap_content"
+				android:layout_column="0"
+				android:layout_row="0"
+				android:id="@+id/cpt_quitter"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				style="?android:attr/buttonStyleSmall"
+				android:text="Enregistrer"
+				android:layout_width="wrap_content"
+				android:id="@+id/cpt_enregistrer"/>
+
+		</GridLayout>
+
+	</LinearLayout>
+
+</ScrollView>
+

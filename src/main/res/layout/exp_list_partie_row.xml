@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="match_parent"
+	android:orientation="vertical"
+	android:background="#C2A8E4">
+
+	<GridLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:columnCount="4"
+		android:rowCount="1"
+		android:padding="5dp">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_column="0"
+			android:layout_row="0"
+			android:id="@+id/exp_list_poste_row_ref"
+			android:ems="5"
+			android:textColor="#000000"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:id="@+id/exp_list_poste_row_id"
+			android:layout_column="1"
+			android:layout_row="0"
+			android:paddingLeft="5dp"
+			android:textColor="#000000"/>
+
+		<HorizontalScrollView
+			android:layout_column="2"
+			android:layout_row="0"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:ems="9"
+				android:marqueeRepeatLimit="3"
+				android:layout_width="wrap_content"
+				android:id="@+id/exp_list_poste_row_libele"
+				android:text="well"
+				android:paddingLeft="7dp"
+				android:textColor="#000000"/>
+
+		</HorizontalScrollView>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:ems="5"
+			android:layout_width="wrap_content"
+			android:id="@+id/exp_list_poste_row_montant"
+			android:text="0.0"
+			android:layout_column="3"
+			android:layout_row="0"
+			android:gravity="right"
+			android:textColor="#000000"/>
+
+	</GridLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<Spinner
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:id="@+id/partiedialog_spinner"/>
+
+	<GridLayout
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		rowCount="1"
+		columnCount="1">
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="OK"
+			android:layout_width="100dp"
+			android:id="@+id/partiedialog_ok_btn"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			style="?android:attr/buttonStyleSmall"
+			android:text="Cancel"
+			android:layout_width="100dp"
+			android:id="@+id/partiedialog_cancel_btn"/>
+
+	</GridLayout>
+
+</LinearLayout>
+
