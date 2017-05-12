@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+			<item android:title="Resumé">
+				<menu>
+			<item
+        android:id="@+id/nm_bilan"
+        android:title="Bilan"
+				android:icon="@drawable/ic_table_large"/>
+			<item
+        android:id="@+id/nm_resultat"
+        android:title="Résultat"
+				android:icon="@drawable/ic_table_large"/>
+				</menu>
+			</item>
+			<item
+        android:id="@+id/nm_ref"
+        android:title="Référence"
+				android:icon="@drawable/ic_grid"/>
+    
+</menu>

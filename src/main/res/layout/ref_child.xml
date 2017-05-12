@@ -4,7 +4,7 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical"
-	android:background="#A5DA8E"
+	android:background="@color/green_milk"
 	android:layout_marginLeft="10dp">
 
 	<TextView
@@ -12,7 +12,7 @@
 		android:layout_height="wrap_content"
 		android:text="10 Capital"
 		android:layout_width="match_parent"
-		android:textColor="#000000"
+		android:textColor="@color/black"
 		android:paddingLeft="25dp"
 		android:textStyle="italic"/>
 

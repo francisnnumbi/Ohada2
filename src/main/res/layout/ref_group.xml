@@ -4,16 +4,17 @@
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:orientation="vertical"
-	android:background="#000000">
+	android:background="@color/blue">
 
 	<TextView
 		android:id="@+id/ref_group_tv1"
-		android:layout_height="wrap_content"
+		android:layout_height="40dp"
 		android:text="Classe 1"
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:layout_width="match_parent"
-		android:textColor="#FFFFFF"
-		android:paddingLeft="25dp"/>
+		android:textColor="@color/white"
+		android:paddingLeft="40dp"
+		android:gravity="center_vertical"/>
 
 </LinearLayout>
 

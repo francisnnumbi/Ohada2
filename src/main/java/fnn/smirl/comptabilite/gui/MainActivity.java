@@ -8,6 +8,8 @@ import android.support.v4.view.*;
 import android.support.v7.app.*;
 import android.support.v7.widget.*;
 import android.view.*;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.View.*;
 import fnn.smirl.comptabilite.*;
 import fnn.smirl.comptabilite.gui.activities.*;
@@ -19,11 +21,14 @@ import fnn.smirl.comptabilite.ohada.plan.*;
 import fnn.smirl.simple.*;
 import java.io.*;
 import java.util.*;
+import android.support.v4.widget.*;
 
 
 public class MainActivity extends AppCompatActivity
 implements OnClickListener {
-
+private Toolbar toolbar;
+	private DrawerLayout drawerLayout;
+	private ActionBarDrawerToggle abdt;
 	static File sdcard = Environment.getExternalStorageDirectory();
 	static File dir = new File(sdcard.getAbsolutePath() + "/Android/data/fnn.smirl.comptabilite/ohada/db");
 	static File filename = new File(dir, "/ohada.json");
@@ -31,12 +36,11 @@ implements OnClickListener {
 	public static Ohada ohada = new Ohada();
 	public static Compte compteActif = null;
 	public static Ecriture ecritureActive = null;
-	public static Context ctx;
+	public static AppCompatActivity ctx;
 	FloatingActionButton fab;
 	TabLayout tabLayout;
 	ViewPager my_pager;
 	private static TabsAdapter tad;
-	public static ComptesListAdapter cpt_list_adapter;
 	int index = 0;
 	ArrayList<Fragment> tabarray = new ArrayList<Fragment>();
 
@@ -52,31 +56,71 @@ implements OnClickListener {
 	protected void onResume() {
 		// TODO: Implement this method
 		super.onResume();
-		cpt_list_adapter.notifyDataSetChanged();
 	}
 
 	private void init() {
 		if (!dir.exists())dir.mkdirs();
-		if (cpt_list_adapter == null) {
 			try {
 				retrieve();
-				cpt_list_adapter = new ComptesListAdapter(this, ohada.comptes);
 			} catch (Exception e) {
 				ohada = new Ohada();
 				store();
-			} finally {
-				cpt_list_adapter = new ComptesListAdapter(this, ohada.comptes);
-			}
+			} 
 
-		}
 		setupToolbar();
+		setupNavigationDrawer();
 		setTabLayout();
 		setupViewPager();
 		setupFab();
 	}
 
+	private void setupNavigationDrawer() {
+		// TODO: Implement this method
+		drawerLayout = (DrawerLayout)findViewById(R.id.drawer);
+		NavigationView navigationView = (NavigationView)
+		findViewById(R.id.navigation_view);
+		navigationView.setNavigationItemSelectedListener(new
+		NavigationView.OnNavigationItemSelectedListener(){
+
+			@Override
+			public boolean onNavigationItemSelected(MenuItem p1) {
+				// TODO: Implement this method
+				int _id = p1.getItemId();
+				switch(_id){
+					case R.id.nm_bilan:
+						startActivity(new Intent(getApplicationContext(), EtatFinActivity.class));
+						break;
+						case R.id.nm_resultat:
+							showSnack(ctx, "Sera ajouté bientôt !");
+							break;
+					case R.id.nm_ref:
+						startActivity(new Intent(getApplicationContext(), ReferencesActivity.class));
+						break;	
+				}
+				return true;
+			}
+		});
+		
+		View header = navigationView.getHeaderView(0);
+		AppCompatTextView user_tv = (AppCompatTextView)header.findViewById(R.id.nav_header_user);
+		user_tv.setText(ohada.username);
+		
+		abdt = new ActionBarDrawerToggle(
+		this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close){
+			@Override
+			public void onDrawerClosed(View v){super.onDrawerClosed(v);}
+			
+			@Override
+			public void onDrawerOpened(View v){super.onDrawerOpened(v);}
+			
+		};
+		
+		drawerLayout.setDrawerListener(abdt);
+		abdt.syncState();
+	}
+
 	private void setupToolbar() {
-		Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+		toolbar = (Toolbar)findViewById(R.id.toolbar);
 		setSupportActionBar(toolbar);
 		// Show menu icon
 		final ActionBar ab = getSupportActionBar();
@@ -102,8 +146,8 @@ implements OnClickListener {
 		tabarray.add(tct);
 		EcritureTab ect = new EcritureTab();
 		tabarray.add(ect);
-		BilanTab bilt = new BilanTab();
-		tabarray.add(bilt);
+//		BilanTab bilt = new BilanTab();
+//		tabarray.add(bilt);
 		tad = new TabsAdapter(getSupportFragmentManager(), tabarray);
 		my_pager.setAdapter(tad);
 		tabLayout.setupWithViewPager(my_pager);
@@ -120,9 +164,9 @@ implements OnClickListener {
 	}
 
 	private static void store() {
-		//showSnack("Mise à jour de la base des données en cours...");
+		showSnack(ctx, "Mise à jour de la base des données en cours...");
 		serializer.serialize(filename.getAbsolutePath(), ohada, Ohada.class);
-		//showSnack("Mise à jour terminée.");
+		showSnack(ctx, "Mise à jour terminée.");
 	}
 
 	private static void retrieve() {
@@ -145,7 +189,7 @@ implements OnClickListener {
 				startCompteActivity(null);
 				break;
 			case R.id.action_about:
-				startActivity(new Intent(this, ReferencesActivity.class));
+				showSnack(ctx, "Sera ajouté bientôt !");
 				break;
 			case R.id.action_exit:
 				finish();
@@ -162,11 +206,19 @@ implements OnClickListener {
 		}
 	}
 
-	private void showSnack(String msg) {
-		Snackbar.make(findViewById(R.id.coordinatorLayout),
+	private static void showSnack(AppCompatActivity activity, String msg) {
+		Snackbar.make(activity.findViewById(R.id.coordinatorLayout),
 		msg,
 		Snackbar.LENGTH_SHORT)
-		.setAction("OK", this)
+		.setAction("OK", new OnClickListener(){
+
+			@Override
+			public void onClick(View p1) {
+				// TODO: Implement this method
+			}
+
+			
+		})
 		.show();
 	}
 

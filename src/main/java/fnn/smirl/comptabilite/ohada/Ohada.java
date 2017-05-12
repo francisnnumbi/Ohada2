@@ -7,6 +7,7 @@ import fnn.smirl.comptabilite.ohada.groupes.*;
 import fnn.smirl.comptabilite.ohada.enums.*;
 
 public class Ohada {
+	public String username = "Mon Entreprise";
 	public ArrayList<Compte> comptes = new ArrayList<Compte>();
 	public ArrayList<Ecriture> ecritures = new ArrayList<Ecriture>();
 	public transient Actif actif = new Actif();

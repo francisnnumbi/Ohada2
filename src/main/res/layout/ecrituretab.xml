@@ -1,74 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
 	android:orientation="vertical">
 
-	<TextView
+	<TableLayout
+		android:id="@+id/tl1"
+		android:layout_width="fill_parent"
 		android:layout_height="wrap_content"
-		android:text="JOURNALISATION"
-		android:id="@+id/ect_tv1"
-		android:textAppearance="?android:attr/textAppearanceLarge"
-		android:layout_width="wrap_content"
-		android:layout_gravity="center|center_vertical|center_horizontal"
-		android:gravity="center|center_vertical|center_horizontal"/>
+		android:layout_gravity="fill|fill_horizontal"
+		android:shrinkColumns="2"
+		android:stretchColumns="2"
+		android:padding="5dp"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentRight="true">
+
+		<TableRow
+			android:layout_height="match_parent"
+			android:layout_width="match_parent">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:gravity="left"
+				android:textColor="@color/blue"
+				android:text="ID"
+				android:paddingLeft="3dp"
+				android:ems="3"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:gravity="left"
+				android:textColor="@color/blue"
+				android:text="DATE"
+				android:paddingLeft="3dp"
+				android:ems="6"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:textColor="@color/blue"
+				android:text="LIBELÉ"
+				android:paddingLeft="10dp"
+				android:ems="10"/>
+
+		</TableRow>
+
+	</TableLayout>
+
+	<android.support.v7.widget.RecyclerView
+		android:id="@+id/ecrituretab_rv"
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:layout_below="@+id/tl1"
+		android:layout_above="@+id/ecriture_add_btn"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentRight="true"/>
 
 	<Button
 		android:layout_height="wrap_content"
 		style="?android:attr/buttonStyleSmall"
 		android:text="Ajouter Écriture"
 		android:layout_width="wrap_content"
-		android:id="@+id/ecriture_add_btn"/>
+		android:id="@+id/ecriture_add_btn"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentLeft="true"/>
 
-	<GridLayout
-		android:layout_width="fill_parent"
-		android:layout_height="wrap_content"
-		android:alignmentMode="alignBounds"
-		android:layout_gravity="fill|fill_horizontal"
-		android:columnCount="4"
-		android:rowCount="1"
-		android:padding="5dp">
-
-		<TextView
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_column="0"
-			android:layout_row="0"
-			android:gravity="left"
-			android:textColor="#0000FF"
-			android:text="ID"
-			android:ems="3"/>
-
-		<TextView
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_column="1"
-			android:layout_row="0"
-			android:gravity="center"
-			android:textColor="#0000FF"
-			android:layout_columnSpan="2"
-			android:text="DATE"
-			android:paddingLeft="10dp"
-			android:ems="6"/>
-
-		<TextView
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_column="3"
-			android:layout_row="0"
-			android:gravity="left"
-			android:textColor="#0000FF"
-			android:text="LIBELÉ"
-			android:paddingLeft="10dp"
-			android:ems="10"/>
-
-	</GridLayout>
-
-	<ListView
-		android:layout_height="wrap_content"
-		android:layout_width="match_parent"
-		android:id="@+id/ecrituretab_lv"/>
-
-</LinearLayout>
+</RelativeLayout>
 

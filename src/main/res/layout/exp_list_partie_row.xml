@@ -20,7 +20,7 @@
 			android:layout_row="0"
 			android:id="@+id/exp_list_poste_row_ref"
 			android:ems="5"
-			android:textColor="#000000"/>
+			android:textColor="@color/black"/>
 
 		<TextView
 			android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
 			android:layout_column="1"
 			android:layout_row="0"
 			android:paddingLeft="5dp"
-			android:textColor="#000000"/>
+			android:textColor="@color/black"/>
 
 		<HorizontalScrollView
 			android:layout_column="2"
@@ -45,7 +45,7 @@
 				android:id="@+id/exp_list_poste_row_libele"
 				android:text="well"
 				android:paddingLeft="7dp"
-				android:textColor="#000000"/>
+				android:textColor="@color/black"/>
 
 		</HorizontalScrollView>
 
@@ -58,7 +58,7 @@
 			android:layout_column="3"
 			android:layout_row="0"
 			android:gravity="right"
-			android:textColor="#000000"/>
+			android:textColor="@color/black"/>
 
 	</GridLayout>
 

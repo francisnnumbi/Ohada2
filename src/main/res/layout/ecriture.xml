@@ -108,7 +108,7 @@
 						android:layout_width="wrap_content"
 						android:layout_column="0"
 						android:layout_row="0"
-						android:textColor="#0000FF"
+						android:textColor="@color/blue"
 						android:gravity="center"/>
 
 					<TextView
@@ -119,14 +119,14 @@
 						android:layout_columnSpan="2"
 						android:layout_row="0"
 						android:ems="10"
-						android:textColor="#0000FF"
+						android:textColor="@color/blue"
 						android:paddingLeft="10dp"
 						android:gravity="center"/>
 
 					<TextView
 						android:layout_height="wrap_content"
 						android:text="Montant"
-						android:textColor="#0000FF"
+						android:textColor="@color/blue"
 						android:layout_width="wrap_content"
 						android:layout_column="3"
 						android:layout_row="0"
@@ -139,7 +139,7 @@
 						android:layout_column="4"
 						android:layout_row="0"
 						android:ems="5"
-						android:textColor="#0000FF"
+						android:textColor="@color/blue"
 						android:paddingLeft="10dp"
 						android:gravity="right"/>
 
